@@ -6,7 +6,8 @@ pipeline {
             steps {
                 dir('coit-frontend/Dockerfile-multistage'){
 				script {
-				    Docker.build('vijayakurra/coit-frontend')
+				    return docker.build( "-f Dockerfile-multistage .")
+				   
 				
             }
         }
