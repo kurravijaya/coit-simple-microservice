@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build Docker Image') {  
             steps{                     
-	             sh 'docker build -t vijayakurra/coit-frontend:latest . -f Dockerfile-multistage'     
+	             sh 'docker build -t vijayakurra/coit-frontend:latest -f Dockerfile-multistage'     
 	             echo 'Build Image Completed'                
               } 
            }
