@@ -1,11 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage('test'){
-	           steps {
-                       sh 'echo this is test Jenkinfile'
-                      }
-                   }
-               }
+        stage("Build"){
+            steps{
+                sh 'cd coit-frontend && npm install && npm run build'
             }
-        
+        }
+    }
+}	
