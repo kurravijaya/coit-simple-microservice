@@ -1,15 +1,11 @@
-pipeline {
-    agent {
-        docker {
-            image 'node:lts-bullseye-slim' 
-            args '-p 3000:3000' 
-        }
-    }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
+pipeline{
+    agent any
+    stages{
+        stage('test'){
+	           steps {
+                       sh 'echo this is test Jenkinfile'
+                      }
+                   }
+               }
             }
-        }
-    }
-}
+        
