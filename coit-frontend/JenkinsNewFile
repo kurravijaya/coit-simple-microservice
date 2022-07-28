@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                sh 'npm clean install -f Dockerfile-multistage'
+                sh 'npm install -f Dockerfile-multistage'
             }
         }
     }
