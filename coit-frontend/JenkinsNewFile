@@ -1,0 +1,16 @@
+pipeline {
+    agent any 
+        
+    stages {
+        stage('Build') { 
+            steps {
+                dir('coit-frontend/Dockerfile-multistage'){
+				script {
+				my_images = docker.build('vijayakurra/coit-frontend:${APP_VERSION}')
+				
+            }
+        }
+    }
+}
+}
+}
