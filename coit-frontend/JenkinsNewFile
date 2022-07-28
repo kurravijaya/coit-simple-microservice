@@ -1,12 +1,15 @@
-pipeline{
-    agent any
-    stages{
-        stage("Build"){
-	           steps {
-                       dir('coit-frontend/Dockerfile-multistage'){
-		                   sh 'cd coit-frontend && npm install && npm run build'
-                      }
-                   }
-               }
+pipeline {
+    agent {
+        docker {
+            image 'node:lts-bullseye-slim' 
+            args '-p 3000:3000' 
+        }
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'npm install' 
             }
         }
+    }
+}
