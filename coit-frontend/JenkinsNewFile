@@ -4,10 +4,7 @@ pipeline{
         stage("Build"){
 	           steps {
                        dir('coit-frontend/Dockerfile-multistage'){
-		            script {
-				    docker.build('vijayakurra/coit-frontend')
-				
-                          }
+		                   sh 'cd coit-frontend && npm install && npm run build'
                       }
                    }
                }
