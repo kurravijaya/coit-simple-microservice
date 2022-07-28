@@ -11,7 +11,7 @@ pipeline{
         }
         stage('Build Docker Image') {  
             steps{                     
-	             sh 'sudo docker build -t <vijayakurra>/<coit-frontend>:$BUILD_NUMBER .'     
+	             sh 'sudo docker build -t <vijayakurra>/<coit-frontend>:latest .'     
 	             echo 'Build Image Completed'                
               } 
            }
