@@ -1,10 +1,18 @@
 pipeline{
     agent any
+    environment {     
+        DOCKERHUB_CREDENTIALS= credentials('vijayakurra')     
+  }
     stages{
         stage('Build'){
             steps{
                 sh 'cd coit-frontend && npm install && npm run build'
             }
         }
+        stage('Build Docker Image') {  
+            steps{                     
+	             sh 'sudo docker build -t <vijayakurra>/<coit-frontend>:$BUILD_NUMBER .'     
+	             echo 'Build Image Completed'                
+              } 
+           }
     }
-}
