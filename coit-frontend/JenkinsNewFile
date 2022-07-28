@@ -1,17 +1,17 @@
 pipeline {
-    agent any 
+    agent {
+    // Equivalent to "docker build -f Dockerfile.build --build-arg version=1.0.2 ./build/
+    dockerfile {
+        filename 'Dockerfile-multistage.build'
+        dir 'coit-frontend/Dockerfile-multistage'
         
-    stages {
-        stage('Build') { 
-            steps {
-                dir('coit-frontend/Dockerfile-multistage'){
-				script {
-				    return docker.build( "-f Dockerfile-multistage .")
-				   
-				
-            }
-        }
     }
+}
+stages{
+   stage('Build'){
+      steps{
+	      sh echo 'build in jenkinfile'
+}
 }
 }
 }
