@@ -2,9 +2,9 @@ pipeline{
     agent any
     stages{
         stage("Build"){
-		steps {
-                dir('coit-frontend/Dockerfile-multistage'){
-		    script {
+	           steps {
+                       dir('coit-frontend/Dockerfile-multistage'){
+		            script {
 				    docker.build('vijayakurra/coit-frontend')
 				
                           }
