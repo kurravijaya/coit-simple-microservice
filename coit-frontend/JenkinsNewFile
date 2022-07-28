@@ -4,12 +4,12 @@ pipeline{
         stage("Build"){
 		steps {
                 dir('coit-frontend/Dockerfile-multistage'){
-				script {
+		    script {
 				    docker.build('vijayakurra/coit-frontend')
 				
+                          }
+                      }
+                   }
+               }
             }
         }
-    }
-}
-}
-}
