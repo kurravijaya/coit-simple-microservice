@@ -8,7 +8,8 @@ pipeline{
         }
         stage('Build Docker Image') {  
             steps{    
-	             sh 'docker build -f Dockerfile-multistage -t vijayakurra/coit-frontend:latest /var/lib/jenkins/workspace/JenkinFile/coit-frontend/' 
+	             sh '''cd coit-frontend
+                           docker build -t vijayakurra/coit-frontend:${APP_VERSION} . -f Dockerfile-multistage'''
 	             echo 'Build Image Completed'                
               } 
            }
